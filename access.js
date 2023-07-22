@@ -33,3 +33,5 @@ async function admin(ctx, next) {
   }
   await next();
 }
+
+bot.use(admin);
