@@ -2,37 +2,58 @@
 
 Access control plugin for the [grammY](https://github.com/grammyjs/grammy) framework!
 
-<br>
-
 ### Features
 
-Middleware for grammY which blocks unauthorized requests. Use this to ensure only authorized Telegram IDs (admins) can use your bot.
+Middleware for grammY which lets you implement separate logic for admins or paid/pro users.
 
-<br>
+Use this to ensure only authorized Telegram IDs (admins) can use your bot or certain features.
 
 ### Usage
 
-Copy the plugin code from ```access.js``` and use it in your grammY project. All messages sent to your bot by an ID not in the pre-defined admin list will be blocked from being able to execute further code and waste CPU cycles. You will get a console notification of their details, and they will get the message "You are not authorized to use this bot." when they try to use the bot. Only commands or messages beginning with a '/' are allowed.
+Copy the plugin code from ```access.js``` and use it in your grammY project.
 
-_Note: The admin list is stored in env_
+Messages sent to your bot are checked against user IDs in admin or pro user list.
 
-<br>
+Implement separate logic for admins and pro users.
 
-### Future Implementations
+### Example
 
-1. Add support for multiple Telegram IDs (currently untested)
-2. Allow one step admin only access on/off using a feature flag config
-3. Implement time based access
+1. To only let paid users access the bot
+
+```node
+bot.on("message" => (ctx){
+    if (ctx.config.isPro) {
+        ctx.reply("Hello 👋 You are a Pro user.")
+    } else {
+        ctx.reply ("Please subscribe to a paid plan to use the bot.)
+    }
+})
+```
+
+2. To only let admins access the bot
+
+```node
+bot.on("message" => (ctx){
+    if (ctx.config.isAdmin) {
+        ctx.reply("Hello 👋 You are an admin.")
+    } else {
+        ctx.reply ("You are unauthorized to use the bot.")
+    }
+})
+```
+
+_Note: The admin or pro user list is stored in env_
+
+### Future
+
+1. Implement time based access
+2. Replace env management of access list to db
 
 _Note: 'Admin' here only refers to the list of Telegram IDs included in the env. It has nothing to do with group admins or any other._
-
-<br>
 
 ### Contribute
 
 If you'd like to contribute to the project, please read grammY's [guide to plugins](https://grammy.dev/plugins/guide.html), then open a PR.
-
-<br>
 
 ### License
 

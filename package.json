@@ -1,0 +1,15 @@
+{
+  "name": "grammyaccess",
+  "version": "0.1.0",
+  "description": "Access control plugin for the grammY framework!",
+  "main": "access.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Zubin",
+    "email": "me@zubin.org.in",
+    "url": "https://zubin.org.in"
+  },
+  "license": "MIT"
+}
