@@ -1,4 +1,4 @@
-# grammYAdmin
+# grammYAccess
 
 Access control plugin for the [grammY](https://github.com/grammyjs/grammy) framework!
 
