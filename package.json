@@ -1,7 +1,7 @@
 {
   "name": "grammyaccess",
-  "version": "0.1.0",
-  "description": "Access control plugin for the grammY framework!",
+  "version": "0.1.1",
+  "description": "Access control middleware plugin for the grammY framework!",
   "main": "access.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,13 @@
     "email": "me@zubin.org.in",
     "url": "https://zubin.org.in"
   },
+   "keywords": [
+    "grammy",
+    "grammyjs",
+    "grammy-plugin",
+    "middleware",
+    "telegram",
+    "telegram-bot"
+  ],
   "license": "MIT"
 }

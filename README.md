@@ -1,6 +1,6 @@
 # grammYAccess
 
-Access control plugin for the [grammY](https://github.com/grammyjs/grammy) framework!
+Access control middleware plugin for the [grammY](https://github.com/grammyjs/grammy) framework!
 
 ### Features
 
